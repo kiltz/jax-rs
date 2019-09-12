@@ -5,7 +5,15 @@ build/
 
 # ignore all files ending with ~
 *~ 
+#IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea
+
+#Eclipse
+.classpath
+.project
 
 .gradle/
-.idea/
 gradle/
