@@ -1,34 +1,31 @@
 package de.kiltz.rest.basic;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
+import org.springframework.stereotype.Component;
 
 /**
  * @author tz
  */
 
-@RestController
-@RequestMapping(path = "rs/api/basic")
+@Component
+@Path("rs/api/basic")
 public class KommunikationsRestService {
 
     /**
      * Testmethode für Überprüfung der Kommunikation
      * curl -i http://127.0.0.1:8080/rs/api/basic/ping?s=test -H "ACCEPT:text/plain"
      *
-     * Jax-RS:
-     *    @GET
-     *    @Path("ping")
-     *    @Produces("text/plain")
-     *
-     *    mit @QueryParam("s")
-     *
      * @param txt
      * @return
      */
-    @RequestMapping(method = RequestMethod.GET, path = "ping", produces = "text/plain")
-    public String pingPlain(@RequestParam("s") String txt) {
+    @GET
+    @Path("ping")
+    @Produces("text/plain")
+    public String pingPlain(@QueryParam("s") String txt) {
         txt = txt == null ? "NULL" : txt;
         return txt.toUpperCase();
     }
