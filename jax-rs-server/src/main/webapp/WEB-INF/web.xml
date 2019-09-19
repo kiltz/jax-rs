@@ -11,7 +11,7 @@
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>de.kiltz.rest.basic</param-value>
+            <param-value>de.kiltz.rest</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -19,5 +19,31 @@
         <servlet-name>REST-Servlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+    <!--
+    in tomcat-users.xml
+          <role rolename="admin"/>
+        <user username="Ben" password="geheim" roles="admin"/>
+
+     -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Test SecurityContext (Ben, geheim)</web-resource-name>
+            <url-pattern>/api/context/security-context</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Test SecurityContext (Ben, geheim)</realm-name>
+    </login-config>
+
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
+
 
 </web-app>
