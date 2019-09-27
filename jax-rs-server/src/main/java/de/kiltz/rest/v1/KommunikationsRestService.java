@@ -1,16 +1,19 @@
-package de.kiltz.rest.basic;
+package de.kiltz.rest.v1;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * @author tz
  */
 
-@Path("rs/api/basic")
-@RestService
+@Path("/v1/basic")
+@Api("/v1/basic")
 public class KommunikationsRestService {
 
     /**
@@ -23,6 +26,7 @@ public class KommunikationsRestService {
     @GET
     @Path("ping")
     @Produces("text/plain")
+    @ApiOperation(value = "Kommunikationstest", produces = "text/plain")
     public String pingPlain(@QueryParam("s") String txt) {
         txt = txt == null ? "NULL" : txt;
         return txt.toUpperCase();
