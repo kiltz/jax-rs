@@ -123,9 +123,9 @@ public class KommunikationsRestService {
 	@GET
 	@Path("daten")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public de.kiltz.semi.rest.basic.DatenObjekt getDaten() {
+	public RootDatenTypen getDaten() {
 
-		return new de.kiltz.semi.rest.basic.DatenObjekt();
+		return new RootDatenTypen();
 	}
 
 	/**
@@ -137,7 +137,8 @@ public class KommunikationsRestService {
 	@Path("daten")
 	@Consumes(MediaType.APPLICATION_XML)
 	@Produces(MediaType.APPLICATION_XML)
-	public de.kiltz.semi.rest.basic.DatenObjekt getUndSetDatenInXML(de.kiltz.semi.rest.basic.DatenObjekt obj) {
+	public RootDatenTypen getUndSetDatenInXML(RootDatenTypen obj) {
+		System.out.println("Erhalte "+obj);
 		obj.setZahl(obj.getZahl() * 2);
 		return obj;
 	}

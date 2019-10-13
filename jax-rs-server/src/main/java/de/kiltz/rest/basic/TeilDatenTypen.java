@@ -1,11 +1,11 @@
 package de.kiltz.rest.basic;
 
-public class DatenObjekt2 {
+public class TeilDatenTypen {
 	private String txt;
 	private int zahl;
 	private float gleitZahl;
 	
-	public DatenObjekt2() {
+	public TeilDatenTypen() {
 		double d = Math.random();
 		setTxt("Text: "+d);
 		setZahl((int)(d*6+1));
@@ -30,4 +30,13 @@ public class DatenObjekt2 {
 		this.gleitZahl = gleitZahl;
 	}
 
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("DatenObjekt2{");
+		sb.append("txt='").append(txt).append('\'');
+		sb.append(", zahl=").append(zahl);
+		sb.append(", gleitZahl=").append(gleitZahl);
+		sb.append('}');
+		return sb.toString();
+	}
 }

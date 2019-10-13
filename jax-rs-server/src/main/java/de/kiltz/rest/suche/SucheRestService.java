@@ -10,7 +10,7 @@ public class SucheRestService {
 
 	@GET
 	@Produces("text/plain")
-	public String suche(@QueryParam("q") de.kiltz.semi.rest.suche.SuchParameter p) {
+	public String suche(@QueryParam("q") SuchParameter p) {
 		return p.toString();
 	}
 	

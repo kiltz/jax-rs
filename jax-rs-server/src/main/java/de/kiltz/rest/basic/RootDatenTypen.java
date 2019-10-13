@@ -9,16 +9,16 @@ import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class DatenObjekt {
+public class RootDatenTypen {
 	private String txt;
 	private int zahl;
 	private float gleitZahl;
 	private Date datum;
 	private List<String> liste;
 	private Map<Integer, String> mappe;
-	private List<de.kiltz.semi.rest.basic.DatenObjekt2> komplexeListe;
+	private List<TeilDatenTypen> komplexeListe;
 	
-	public DatenObjekt() {
+	public RootDatenTypen() {
 		double d = Math.random();
 		setTxt("Text: "+d);
 		setZahl((int)(d*6+1));
@@ -35,10 +35,10 @@ public class DatenObjekt {
 		mappe.put(3, "Mar");
 		mappe.put(4, "Apr");
 		
-		komplexeListe = new ArrayList<de.kiltz.semi.rest.basic.DatenObjekt2>();
-		komplexeListe.add(new de.kiltz.semi.rest.basic.DatenObjekt2());
-		komplexeListe.add(new de.kiltz.semi.rest.basic.DatenObjekt2());
-		komplexeListe.add(new de.kiltz.semi.rest.basic.DatenObjekt2());
+		komplexeListe = new ArrayList<TeilDatenTypen>();
+		komplexeListe.add(new TeilDatenTypen());
+		komplexeListe.add(new TeilDatenTypen());
+		komplexeListe.add(new TeilDatenTypen());
 	}
 	public String getTxt() {
 		return txt;
@@ -76,12 +76,24 @@ public class DatenObjekt {
 	public void setMappe(Map<Integer, String> mappe) {
 		this.mappe = mappe;
 	}
-	public List<de.kiltz.semi.rest.basic.DatenObjekt2> getKomplexeListe() {
+	public List<TeilDatenTypen> getKomplexeListe() {
 		return komplexeListe;
 	}
-	public void setKomplexeListe(List<de.kiltz.semi.rest.basic.DatenObjekt2> komplexeListe) {
+	public void setKomplexeListe(List<TeilDatenTypen> komplexeListe) {
 		this.komplexeListe = komplexeListe;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		final StringBuilder sb = new StringBuilder("DatenObjekt{");
+		sb.append("txt='").append(txt).append('\'');
+		sb.append(", zahl=").append(zahl);
+		sb.append(", gleitZahl=").append(gleitZahl);
+		sb.append(", datum=").append(datum);
+		sb.append(", liste=").append(liste);
+		sb.append(", mappe=").append(mappe);
+		sb.append(", komplexeListe=").append(komplexeListe);
+		sb.append('}');
+		return sb.toString();
+	}
 }
