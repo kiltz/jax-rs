@@ -36,8 +36,8 @@ public class KommunikationsRestService {
 	 * oder
 	 * curl -i "http://127.0.0.1:8080/rs/api/basic/ping;info=dev?s=test" -H "ACCEPT:text/plain"
 	 *
-	 * @param txt
-	 * @return
+	 * @param txt der Query-Param
+	 * @return der Query-Param und der Matix-Param
 	 */
 	@GET
 	@Path("ping")
@@ -51,7 +51,7 @@ public class KommunikationsRestService {
 	 * Testmethode für Überprüfung der POST-Kommunikation Test mit: 
 	 * curl -i http://localhost:8080/rs/api/basic/ping -d txt=test
 	 * 
-	 * @param txt
+	 * @param txt ein Query-Param
 	 * @return den Text mit dem Prefix "POST"
 	 */
 	@POST
@@ -66,7 +66,7 @@ public class KommunikationsRestService {
 	/**
 	 * Testmethode für Überprüfung der Kommunikation in HTML
 	 * 
-	 * @param txt
+	 * @param txt ein Query-Param
 	 * @return den übergebenen Text in Kleinbuchstaben als Überschrift.
 	 */
 	@GET
@@ -79,8 +79,8 @@ public class KommunikationsRestService {
 	/**
 	 * Kleines Formular.
 	 * 
-	 * @param x
-	 * @param y
+	 * @param x irgend ein Wert
+	 * @param y irgend ein anderer Wert
 	 * @return den Inhalt der Parameter
 	 */
 	@POST
@@ -130,7 +130,7 @@ public class KommunikationsRestService {
 
 	/**
 	 * 
-	 * @param obj
+	 * @param obj Das Daten-Objekt
 	 * @return Das Datenobjekt in XML
 	 */
 	@POST
