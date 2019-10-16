@@ -19,13 +19,15 @@
         <li><a href="api/context/providers">Providers</a></li>
         <li><a href="api/basic/images/wtf-code.jpg">Bilder</a></li>
         <li><a href="api/basic/daten">Daten-Objekt</a></li>
-         
+        <li>Datei-Download: <a href="api/datei?laenge=500&typ=txt">Text</a> und <a href="api/datei?laenge=500&typ=zip">Gezippt</a></li>
+
         
     </ul>
     <form action="api/basic/x-plus-y" method="POST">
     X: <input type="text" name="x" size="5"/> Y: <input type="text" name="y" size="5"/>
     <input type="submit" value=" = "/> 
     </form>
+
     <a href="api/application.wadl">Übersicht der Services</a>
   </body>
 </html> 
