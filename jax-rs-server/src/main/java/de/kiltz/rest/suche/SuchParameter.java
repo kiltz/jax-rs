@@ -12,7 +12,9 @@ public class SuchParameter {
 	private String name;
 	private String vorname;
 	private int mindestUmsatz;
-	
+
+
+
 	public static SuchParameter fromString(String s) throws IOException{
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.readValue(s, SuchParameter.class);
@@ -40,7 +42,12 @@ public class SuchParameter {
 	public void setMindestUmsatz(int mindestUmsatz) {
 		this.mindestUmsatz = mindestUmsatz;
 	}
-	
-	
+
+	public static void main(String[] args) {
+		SuchParameter p = new SuchParameter();
+		p.setName("Nachname");
+		p.setVorname("Vorname");
+		System.out.println(p);
+	}
 	
 }

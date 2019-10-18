@@ -1,16 +1,24 @@
 package de.kiltz.rest.suche;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 
 @Path("suche")
 public class SucheRestService {
 
+	/**
+	 * @param p
+	 * @return
+	 */
 	@GET
-	@Produces("text/plain")
+	@Produces(MediaType.TEXT_PLAIN)
+	@Consumes(MediaType.APPLICATION_JSON)
 	public String suche(@QueryParam("q") SuchParameter p) {
+		p = p == null ? new SuchParameter() : p;
 		return p.toString();
 	}
 	
