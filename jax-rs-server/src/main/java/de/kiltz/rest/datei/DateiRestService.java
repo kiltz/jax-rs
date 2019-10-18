@@ -2,12 +2,15 @@ package de.kiltz.rest.datei;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -30,6 +33,16 @@ public class DateiRestService {
 		} else {
 			return virtuelleDatei(laenge);
 		}
+	}
+
+	@POST
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	public void postDatei(InputStream in) throws IOException {
+		java.nio.file.Path datei = erstelleTmpPfad().resolve("upload.txt");
+		Files.deleteIfExists(datei);
+		System.out.println(datei);
+		Files.copy(in, datei);
+
 	}
 
 	private Response gezippteDateien(int laenge) throws IOException {
