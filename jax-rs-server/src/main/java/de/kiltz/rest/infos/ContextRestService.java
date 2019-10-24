@@ -19,84 +19,75 @@ public class ContextRestService {
     @GET
     @Path("uri-info")
     @Produces("text/plain")
-    public String getUriInfo(@Context UriInfo info)
-    {
+    public String getUriInfo(@Context UriInfo info) {
         StringBuilder txt = new StringBuilder("UriInfo:\n----------\n");
-        txt.append("Path: "+info.getPath());
-        txt.append("\nAbsolutePath(): "+info.getAbsolutePath());
-        txt.append("\nBaseUri(): "+info.getBaseUri());
-        for (Map.Entry<String, List<String>> e : info.getQueryParameters().entrySet())
-        {
-            txt.append("\n"+e.getKey()+": "+e.getValue());
+        txt.append("Path: " + info.getPath());
+        txt.append("\nAbsolutePath(): " + info.getAbsolutePath());
+        txt.append("\nBaseUri(): " + info.getBaseUri());
+
+        for (Map.Entry<String, List<String>> e : info.getQueryParameters().entrySet()) {
+            txt.append("\n" + e.getKey() + ": " + e.getValue());
         }
-        
+
         return txt.toString();
     }
-  
+
     @GET
     @Path("http-headers")
     @Produces("text/plain")
-    public String getHttpHeaders(@Context HttpHeaders info)
-    {
+    public String getHttpHeaders(@Context HttpHeaders info) {
         StringBuilder txt = new StringBuilder("Headers:\n----------\n");
-        for (Map.Entry<String, List<String>> e : info.getRequestHeaders().entrySet())
-        {
-            txt.append("\n"+e.getKey()+": "+e.getValue());
+        for (Map.Entry<String, List<String>> e : info.getRequestHeaders().entrySet()) {
+            txt.append("\n" + e.getKey() + ": " + e.getValue());
         }
-        
+
         return txt.toString();
     }
+
     @GET
     @Path("request")
     @Produces("text/plain")
-    public String getRequest(@Context Request info)
-    {
+    public String getRequest(@Context Request info) {
         StringBuilder txt = new StringBuilder("Request:\n----------\n");
-        txt.append("Method: "+info.getMethod());
-        
+        txt.append("Method: " + info.getMethod());
+
         return txt.toString();
     }
-    
+
     @GET
     @Path("security-context")
     @Produces("text/plain")
-    public String getSecurityContext(@Context SecurityContext info)
-    {
+    public String getSecurityContext(@Context SecurityContext info) {
         StringBuilder txt = new StringBuilder("SecurityContext:\n----------\n");
         txt.append("UserPrincipal: ");
         txt.append(info.getUserPrincipal() == null ? "Keiner" : info.getUserPrincipal().getName());
-        
+
         return txt.toString();
     }
-    
+
     @GET
     @Path("providers")
     @Produces("text/plain")
-    public String getProviders(@Context Providers info)
-    {
+    public String getProviders(@Context Providers info) {
         StringBuilder txt = new StringBuilder("Providers:\n----------\n");
-        txt.append("Providers: "+info.toString());
-        
+        txt.append("Providers: " + info.toString());
+
         return txt.toString();
     }
 
     @GET
     @Path("http-request")
     @Produces("text/plain")
-    public String getHttpRequest(@Context HttpServletRequest req)
-    {
+    public String getHttpRequest(@Context HttpServletRequest req) {
         StringBuilder txt = new StringBuilder("HttpServletRequest:\n----------\n");
-        if (req != null)
-        {
-            txt.append("ContextPath: "+req.getContextPath());
-            txt.append("\nRemoteAddr: "+req.getRemoteAddr());
-        }
-        else
-        {
+        if (req != null) {
+            txt.append("ContextPath: " + req.getContextPath());
+            txt.append("\nRemoteAddr: " + req.getRemoteAddr());
+        } else {
             txt.append("HttpServletRequest ist null ");
         }
-        
+
         return txt.toString();
     }
-    
+
 }
