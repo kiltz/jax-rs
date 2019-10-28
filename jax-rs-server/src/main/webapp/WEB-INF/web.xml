@@ -11,14 +11,46 @@
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>de.kiltz.rest</param-value>
+            <param-value>
+                io.swagger.jaxrs.listing,
+                de.kiltz.rest
+            </param-value>
         </init-param>
+<!--
+        <init-param>
+            <param-name>jersey.config.feature.DisableWADL</param-name>
+            <param-value>true</param-value>
+        </init-param>
+-->
         <load-on-startup>1</load-on-startup>
     </servlet>
+
+    <!--
     <servlet-mapping>
         <servlet-name>REST-Servlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Swagger-Servlet</servlet-name>
+        <servlet-class>de.kiltz.rest.swagger.SwaggerBootstrap</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    -->
+    <servlet>
+        <servlet-name>Jersey2Config</servlet-name>
+        <servlet-class>io.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
+        <init-param>
+            <param-name>api.version</param-name>
+            <param-value>1.0.0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>swagger.api.basepath</param-name>
+            <param-value>http://localhost:8080/api</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!--
+    -->
     <!--
     in tomcat-users.xml
           <role rolename="admin"/>
