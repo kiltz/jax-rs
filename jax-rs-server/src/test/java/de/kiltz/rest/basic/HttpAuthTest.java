@@ -27,7 +27,7 @@ public class HttpAuthTest {
         clientNoAuth = ClientBuilder.newClient().register(new JacksonJsonProvider());
 
         clientAuth = ClientBuilder.newClient().register(new JacksonJsonProvider());
-        clientAuth.register(HttpAuthenticationFeature.basic("Ben", "geheim"));
+        clientAuth.register(HttpAuthenticationFeature.basic("Ben", "g@nzGeheim1"));
 
     }
 

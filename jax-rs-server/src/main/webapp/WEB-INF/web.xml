@@ -10,6 +10,21 @@
         <param-value>true</param-value>
     </context-param>
     <context-param>
+        <param-name>resteasy.jsonp.enable</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>resteasy.scan.providers</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <!--
+    <context-param>
+        <param-name>resteasy.providers</param-name>
+        <param-value>org.jboss.resteasy.plugins.providers.jackson.Jackson2JsonpInterceptor</param-value>
+    </context-param>
+    -->
+
+    <context-param>
         <param-name>resteasy.servlet.mapping.prefix</param-name>
         <param-value>/api</param-value>
     </context-param>
@@ -24,14 +39,16 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
     <!--
-    in tomcat-users.xml
-          <role rolename="admin"/>
-        <user username="Ben" password="geheim" roles="admin"/>
+    mit AddUser:
+    - Applikationsbenutzer
+    - Benutzername: Ben
+    - Passwort: g@nzGeheim1
+    - Gruppe: admin
 
      -->
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>Test SecurityContext (Ben, geheim)</web-resource-name>
+            <web-resource-name>Test SecurityContext (Ben, g@nzGeheim1)</web-resource-name>
             <url-pattern>/api/context/security-context</url-pattern>
         </web-resource-collection>
         <auth-constraint>
@@ -42,7 +59,7 @@
 
     <login-config>
         <auth-method>BASIC</auth-method>
-        <realm-name>Test SecurityContext (Ben, geheim)</realm-name>
+        <realm-name>Test SecurityContext (Ben, g@nzGeheim1)</realm-name>
     </login-config>
 
     <security-role>

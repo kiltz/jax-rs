@@ -21,6 +21,7 @@ public class BasicTest {
     public static void init() {
         client = ClientBuilder.newClient().register(new JacksonJsonProvider());
 
+
     }
 
     @AfterClass

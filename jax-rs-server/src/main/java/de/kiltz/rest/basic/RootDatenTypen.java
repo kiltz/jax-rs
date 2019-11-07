@@ -6,13 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@XmlRootElement
+//@XmlRootElement
+//@XmlAccessorType(XmlAccessType.FIELD)
+@JsonDeserialize(using = LocalDateDeserializer.class)
+@JsonSerialize(using = LocalDateSerializer.class)
 public class RootDatenTypen {
 	private String txt;
 	private int zahl;
 	private float gleitZahl;
+//	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	private Date datum;
 	private List<String> liste;
 	private Map<Integer, String> mappe;
@@ -20,7 +25,7 @@ public class RootDatenTypen {
 	
 	public RootDatenTypen() {
 		double d = Math.random();
-		setTxt("Text: "+d);
+		setTxt("Text 4: "+d);
 		setZahl((int)(d*6+1));
 		setGleitZahl((float)d);	
 		datum = new Date();
@@ -96,4 +101,6 @@ public class RootDatenTypen {
 		sb.append('}');
 		return sb.toString();
 	}
+
+
 }
