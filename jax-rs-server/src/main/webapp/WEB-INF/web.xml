@@ -5,30 +5,24 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     id="WebApp_ID" version="2.5">
 
-    <context-param>
-        <param-name>resteasy.scan</param-name>
-        <param-value>true</param-value>
-    </context-param>
+    <!--  für ältere Versionen ersetzt durch Servlet 3.0 container 
     <context-param>
         <param-name>resteasy.jsonp.enable</param-name>
         <param-value>true</param-value>
     </context-param>
     <context-param>
+    <context-param>
+        <param-name>resteasy.scan</param-name>
+        <param-value>true</param-value>
+    </context-param>
         <param-name>resteasy.scan.providers</param-name>
         <param-value>true</param-value>
     </context-param>
-    <!--
-    <context-param>
-        <param-name>resteasy.providers</param-name>
-        <param-value>org.jboss.resteasy.plugins.providers.jackson.Jackson2JsonpInterceptor</param-value>
-    </context-param>
-    -->
-
     <context-param>
         <param-name>resteasy.servlet.mapping.prefix</param-name>
         <param-value>/api</param-value>
     </context-param>
-
+    
     <servlet>
         <servlet-name>resteasy</servlet-name>
         <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -38,6 +32,8 @@
         <servlet-name>resteasy</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+    -->
+
     <!--
     mit AddUser:
     - Applikationsbenutzer
