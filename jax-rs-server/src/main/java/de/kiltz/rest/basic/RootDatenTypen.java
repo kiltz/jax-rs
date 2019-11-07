@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,6 +19,7 @@ public class RootDatenTypen {
     private int zahl;
     private float gleitZahl;
     @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    @JsonbDateFormat(value = "dd.MM.yyyy")
     private LocalDate datum;
     private List<String> liste;
     private Map<Integer, String> mappe;
@@ -71,7 +73,6 @@ public class RootDatenTypen {
     }
 
     public LocalDate getDatum() {
-        System.out.println("Get Datum");
         return datum;
     }
 

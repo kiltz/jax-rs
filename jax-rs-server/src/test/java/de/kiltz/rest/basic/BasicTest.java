@@ -14,13 +14,12 @@ import org.junit.Test;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 public class BasicTest {
-    private static final String URL = "http://localhost:8081/rs/api/basic/";
+    private static final String URL = "http://localhost:8088/rs/api/basic/";
     private static Client client;
 
     @BeforeClass
     public static void init() {
         client = ClientBuilder.newClient().register(new JacksonJsonProvider());
-
 
     }
 
@@ -35,7 +34,7 @@ public class BasicTest {
         String matrix = "JUnit";
         WebTarget target = client.target(URL).path("ping").matrixParam("info", matrix).queryParam("s", query);
         String resp = target.request().accept(MediaType.TEXT_PLAIN).get(String.class);
-        Assert.assertEquals(query.toUpperCase()+" "+matrix, resp);
+        Assert.assertEquals(query.toUpperCase() + " " + matrix, resp);
 
     }
 
@@ -50,7 +49,7 @@ public class BasicTest {
 
         RootDatenTypen resp2 = target.request().accept(MediaType.APPLICATION_XML_TYPE)
                 .post(Entity.entity(resp, MediaType.APPLICATION_XML_TYPE), RootDatenTypen.class);
-        Assert.assertEquals(resp.getZahl() * 2 , resp2.getZahl());
+        Assert.assertEquals(resp.getZahl() * 2, resp2.getZahl());
 
     }
 }

@@ -14,13 +14,14 @@ dependencies {
     providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.4'
     providedCompile group: 'javax.servlet', name: 'jsp-api', version: '2.0'
 
+    compile fileTree(dir: 'libs/apache', include: ['*.jar'])
+
     providedCompile fileTree(dir: 'libs/jaxrs-ri/api', include: ['*.jar'])
     providedCompile fileTree(dir: 'libs/jackson', include: ['*.jar'])
-    providedCompile fileTree(dir: 'libs/apache', include: ['*.jar'])
+    providedCompile fileTree(dir: 'libs/jaxrs-ri/lib', include: ['*.jar'])
+    providedCompile fileTree(dir: 'libs/jaxrs-ri/ext', include: ['*.jar'])
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile fileTree(dir: 'libs/jaxrs-ri/lib', include: ['*.jar'])
-    testCompile fileTree(dir: 'libs/jaxrs-ri/ext', include: ['*.jar'])
 }
 
 task deploy (type:Copy, dependsOn: build) {

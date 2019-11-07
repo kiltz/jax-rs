@@ -48,7 +48,7 @@ public class KommunikationsRestService {
     /**
      * Testmethode für Überprüfung der POST-Kommunikation Test mit: curl -i http://localhost:8080/rs/api/basic/ping -d
      * txt=test
-     * 
+     *
      * @param txt
      *            ein Query-Param
      * @return den Text mit dem Prefix "POST"
@@ -63,7 +63,7 @@ public class KommunikationsRestService {
 
     /**
      * Testmethode für Überprüfung der Kommunikation in HTML
-     * 
+     *
      * @param txt
      *            ein Query-Param
      * @return den übergebenen Text in Kleinbuchstaben als Überschrift.
@@ -77,7 +77,7 @@ public class KommunikationsRestService {
 
     /**
      * Kleines Formular.
-     * 
+     *
      * @param x
      *            irgend ein Wert
      * @param y
@@ -94,7 +94,7 @@ public class KommunikationsRestService {
     }
 
     /**
-     * 
+     *
      * @param image
      *            der Dateiname des Bildes
      * @param ctx
@@ -117,9 +117,12 @@ public class KommunikationsRestService {
     }
 
     /**
-     * curl -i http://127.0.0.1:8080/rs/api/basic/daten -H "ACCEPT:application/xml" oder curl -i
-     * http://127.0.0.1:8080/rs/api/basic/daten -H "ACCEPT:application/json"
+     * curl -i http://127.0.0.1:8080/rs/api/basic/daten -H "ACCEPT:application/xml"
+     *
+     * oder
      * 
+     * curl -i http://127.0.0.1:8080/rs/api/basic/daten -H "ACCEPT:application/json"
+     *
      * @return Das Datenobjekt im JSON- oder XML-Format, je nach ACCEPT-Header.
      */
     @GET
@@ -131,7 +134,7 @@ public class KommunikationsRestService {
     }
 
     /**
-     * 
+     *
      * @param obj
      *            Das Daten-Objekt
      * @return Das Datenobjekt in XML

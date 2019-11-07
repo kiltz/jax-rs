@@ -22,7 +22,7 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 // @Ignore
 public class DateiTest {
-    private static final String URL = "http://localhost:8081/rs/api/datei/";
+    private static final String URL = "http://localhost:8088/rs/api/datei/";
     private static Client client;
 
     @BeforeClass
@@ -42,8 +42,7 @@ public class DateiTest {
         Response resp = target.request().accept(MediaType.APPLICATION_OCTET_STREAM).get();
         InputStream in = resp.readEntity(InputStream.class);
 
-        String txt = new BufferedReader(new InputStreamReader(in)).lines()
-                .parallel().collect(Collectors.joining("\n"));
+        String txt = new BufferedReader(new InputStreamReader(in)).lines().parallel().collect(Collectors.joining("\n"));
         in.close();
 
         System.out.println(txt);
@@ -53,7 +52,7 @@ public class DateiTest {
     public void testPost() {
         WebTarget target = client.target(URL);
         InputStream in = getInput();
-        Response resp = target.request().post(Entity.entity(in, MediaType.MULTIPART_FORM_DATA ));
+        Response resp = target.request().post(Entity.entity(in, MediaType.MULTIPART_FORM_DATA));
         System.out.println(resp.getStatus());
     }
 

@@ -18,7 +18,7 @@ import de.kiltz.rest.suche.SuchParameter;
 
 // @Ignore
 public class SucheTest {
-    private static final String URL = "http://localhost:8081/rs/api/suche/";
+    private static final String URL = "http://localhost:8088/rs/api/suche/";
     private static Client client;
 
     @BeforeClass
@@ -38,7 +38,7 @@ public class SucheTest {
         p.setName("Kiltz");
         p.setVorname("Friedrich");
         p.setMindestUmsatz(500);
-        WebTarget target = client.target(URL).queryParam("q", URLEncoder.encode(p.toString(),"UTF-8" ));
+        WebTarget target = client.target(URL).queryParam("q", URLEncoder.encode(p.toString(), "UTF-8"));
         String resp = target.request().accept(MediaType.TEXT_PLAIN).get(String.class);
         System.out.println(resp);
     }
