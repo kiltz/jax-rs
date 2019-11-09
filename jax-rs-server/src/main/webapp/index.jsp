@@ -28,6 +28,6 @@
     <input type="submit" value=" = "/> 
     </form>
 
-    <a href="api/application.wadl">Übersicht der Services</a>
+    <a href="api/application.xml">Übersicht der Services</a>
   </body>
 </html> 

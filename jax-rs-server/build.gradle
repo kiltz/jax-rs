@@ -15,7 +15,8 @@ dependencies {
     providedCompile group: 'javax.servlet', name: 'jsp-api', version: '2.0'
 
     compile fileTree(dir: 'libs/apache', include: ['*.jar'])
-//    compile group: 'org.jboss.resteasy', name: 'resteasy-wadl', version: '3.0.19.Final'
+    compile fileTree(dir: 'libs/resteasy', include: ['*.jar'])
+    //compile group: 'org.jboss.resteasy', name: 'resteasy-wadl', version: '3.9.0.Final'
 
     providedCompile fileTree(dir: 'libs/jaxrs-ri/api', include: ['*.jar'])
     providedCompile fileTree(dir: 'libs/jackson', include: ['*.jar'])

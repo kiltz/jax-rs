@@ -4,7 +4,7 @@
     xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     id="WebApp_ID" version="2.5">
-<!-- 
+  
     <servlet>
         <servlet-name>RESTEasy WADL</servlet-name>
         <servlet-class>org.jboss.resteasy.wadl.ResteasyWadlServlet</servlet-class>
@@ -14,7 +14,7 @@
         <servlet-name>RESTEasy WADL</servlet-name>
         <url-pattern>/application.xml</url-pattern>
     </servlet-mapping>
- -->
+ 
     <!--
     mit AddUser:
     - Applikationsbenutzer
