@@ -14,7 +14,10 @@ import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Providers;
 
+import io.swagger.annotations.Api;
+
 @Path("/context")
+@Api("/context")
 public class ContextRestService {
     @GET
     @Path("uri-info")

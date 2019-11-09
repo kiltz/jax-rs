@@ -20,7 +20,11 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @Path("basic")
+@Api("/basic")
 public class KommunikationsRestService {
 
     // Alternative zum PathParameter, wird mit ; abgetrennt
@@ -40,6 +44,7 @@ public class KommunikationsRestService {
     @GET
     @Path("ping")
     @Produces("text/plain")
+    @ApiOperation(value = "ping", produces = "text/plain")
     public String pingPlain(@QueryParam("s") String txt) {
         txt = txt == null ? "NULL" : txt;
         return txt.toUpperCase() + " " + info;
