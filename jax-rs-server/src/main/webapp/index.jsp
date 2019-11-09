@@ -28,6 +28,6 @@
     <input type="submit" value=" = "/> 
     </form>
 
-    <a href="api/application.wadl">Übersicht der Services</a>
+    <a href="swagger">Übersicht der Services mit Swagger</a>
   </body>
 </html> 
