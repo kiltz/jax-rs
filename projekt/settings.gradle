@@ -1,0 +1,4 @@
+rootProject.name = "vorgang"
+
+include 'vorgang-main'
+include 'vorgang-rs-server'
