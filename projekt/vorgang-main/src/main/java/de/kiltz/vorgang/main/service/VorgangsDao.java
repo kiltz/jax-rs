@@ -1,11 +1,11 @@
-package de.kiltz.vorgang.main.dao;
+package de.kiltz.vorgang.main.service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import de.kiltz.vorgang.main.data.VorgangInfo;
+import de.kiltz.vorgang.main.service.data.VorgangInfo;
 
 /**
  * Inmemory-Dummy-Version eines DAOs ohne Interface, Entitys und Persistenz.
@@ -14,7 +14,7 @@ import de.kiltz.vorgang.main.data.VorgangInfo;
  *
  * @author tz (F0290158)
  */
-public class VorgangsDao {
+class VorgangsDao {
     private static VorgangsDao instance;
     private Map<Long, VorgangInfo> data;
 
@@ -47,7 +47,8 @@ public class VorgangsDao {
     }
 
     public List<VorgangInfo> findByName(String name) {
-        return data.values().stream().filter(v -> v.getName().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
+        return data.values().stream().filter(v -> v.getName().toLowerCase().contains(name.toLowerCase()))
+                .collect(Collectors.toList());
     }
 
 }

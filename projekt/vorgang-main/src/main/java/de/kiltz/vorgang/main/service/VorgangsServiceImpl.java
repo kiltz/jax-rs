@@ -2,13 +2,12 @@ package de.kiltz.vorgang.main.service;
 
 import java.util.List;
 
-import de.kiltz.vorgang.main.dao.VorgangsDao;
-import de.kiltz.vorgang.main.data.VorgangInfo;
+import de.kiltz.vorgang.main.service.data.VorgangInfo;
 
 /**
  * @author tz (F0290158)
  */
-public class VorgangsServiceImpl implements VorgangsService{
+public class VorgangsServiceImpl implements VorgangsService {
     private VorgangsDao dao;
 
     public VorgangsServiceImpl() {

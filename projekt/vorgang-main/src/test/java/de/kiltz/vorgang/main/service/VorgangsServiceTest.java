@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import de.kiltz.vorgang.main.data.VorgangInfo;
+import de.kiltz.vorgang.main.service.data.VorgangInfo;
 
 /**
  * @author tz (F0290158)

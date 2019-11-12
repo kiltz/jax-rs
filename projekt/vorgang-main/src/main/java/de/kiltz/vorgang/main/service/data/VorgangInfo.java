@@ -1,4 +1,4 @@
-package de.kiltz.vorgang.main.data;
+package de.kiltz.vorgang.main.service.data;
 
 import java.time.LocalDateTime;
 

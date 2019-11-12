@@ -1,4 +1,4 @@
-package de.kiltz.vorgang.main.data;
+package de.kiltz.vorgang.main.service.data;
 
 /**
  * @author tz (F0290158)
