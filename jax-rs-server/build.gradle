@@ -21,8 +21,9 @@ dependencies {
 	compile 'io.swagger:swagger-jersey2-jaxrs:1.5.13'
 	compile 'io.springfox:springfox-swagger2:2.9.2'
 	compile 'io.springfox:springfox-swagger-ui:2.9.2'
+	compile 'javax.json.bind:javax.json.bind-api:1.0'
+    compile fileTree(dir: 'libs/jackson', include: ['*.jar'])
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
 // gradle bootRun
