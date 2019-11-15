@@ -10,6 +10,7 @@ import org.glassfish.jersey.client.authentication.HttpAuthenticationFeature;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
@@ -17,8 +18,9 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 /**
  * @author tz
  */
+@Ignore
 public class HttpAuthTest {
-    private static final String URL = "http://localhost:8080/rs/api/context/security-context";
+    private static final String URL = "http://localhost:8080/api/context/security-context";
     private static Client clientNoAuth;
     private static Client clientAuth;
 

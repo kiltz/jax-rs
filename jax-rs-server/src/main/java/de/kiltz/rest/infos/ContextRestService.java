@@ -57,6 +57,15 @@ public class ContextRestService {
         return txt.toString();
     }
 
+    /**
+     * Für Sicherheit mit Spring s. z.B. 
+     * https://o7planning.org/de/11649/sichere-spring-boot-restful-service-mit-basic-authentication
+     * oder
+     * http://codeboarding.com/2017/10/05/restful-https-web-services-with-spring-boot-jersey-using-basic-authentication/
+     * 
+     * @param info
+     * @return
+     */
     @GET
     @Path("security-context")
     @Produces("text/plain")

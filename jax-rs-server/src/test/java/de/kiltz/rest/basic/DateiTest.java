@@ -22,7 +22,7 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 // @Ignore
 public class DateiTest {
-    private static final String URL = "http://localhost:8080/rs/api/datei/";
+    private static final String URL = "http://localhost:8080/api/datei/";
     private static Client client;
 
     @BeforeClass

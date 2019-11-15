@@ -18,7 +18,7 @@ import de.kiltz.rest.suche.SuchParameter;
 
 // @Ignore
 public class SucheTest {
-    private static final String URL = "http://localhost:8088/rs/api/suche/";
+    private static final String URL = "http://localhost:8080/api/suche/";
     private static Client client;
 
     @BeforeClass

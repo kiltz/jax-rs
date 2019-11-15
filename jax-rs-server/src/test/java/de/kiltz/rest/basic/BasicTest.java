@@ -14,7 +14,7 @@ import org.junit.Test;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 
 public class BasicTest {
-    private static final String URL = "http://localhost:8088/api/basic/";
+    private static final String URL = "http://localhost:8080/api/basic/";
     private static Client client;
 
     @BeforeClass
