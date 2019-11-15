@@ -18,7 +18,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
 
+import io.swagger.annotations.Api;
+
 @Path("datei")
+@Api("datei")
 public class DateiRestService {
 
 	@GET
