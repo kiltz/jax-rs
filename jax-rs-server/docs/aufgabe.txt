@@ -1,0 +1,15 @@
+1. Aufgabe
+===========
+
+Erstelle eine Resource Class für die Überprüfung des "Gesundheitzustands" des Servers.
+
+a) Basisvariante: Ein formatierter String der z.B. Infos auf einer Konsole ausgibt (curl)
+
+b) Advanced: Ein Pojo mit entsprechenden Properties für die Informationen (um sie z.B. in einer GUI anzuzeigen)
+
+Gute Path-Values wären z.B.
+
+* /checks/health - Zustand der Applikation z.B. Version, Datenbestand (Fake), Gebaut wann und von wem (fake), Uptime etc.
+* /checks/env - Ausgabe von wichtigen Umgebungsvariablen (evtl. mit einem Parapeter um gezielt einen Paramter zu bekommen
+
+
