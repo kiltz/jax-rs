@@ -14,12 +14,8 @@ build/
 #Eclipse
 .classpath
 .project
-<<<<<<< HEAD
-*/.settings/*
-=======
 */.settings/
 projekt/*/.settings
->>>>>>> refs/remotes/origin/03-projekt-jboss
 
 .gradle/
 gradle/
