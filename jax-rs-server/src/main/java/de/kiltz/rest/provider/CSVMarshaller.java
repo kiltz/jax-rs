@@ -16,27 +16,24 @@ import javax.ws.rs.ext.Provider;
 
 @Provider
 @Produces("application/tz-csv")
-public class CSVMarshaller implements MessageBodyWriter {
+public class CSVMarshaller implements MessageBodyWriter<List<Info>> {
 
 	@Override
-	public boolean isWriteable(Class klasse, Type type, Annotation[] anno, MediaType media) {
+	public boolean isWriteable(Class<?> klasse, Type type, Annotation[] anno, MediaType media) {
 		return media.toString().equals("application/tz-csv");
 	}
 
 	@Override
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void writeTo(Object target, Class type, Type genericType, Annotation[] annotations, MediaType mediaType,
-			MultivaluedMap httpHeaders, OutputStream outputStream) throws IOException, WebApplicationException {
-		if (target instanceof List) {
-			List<Info> liste = (List<Info>) target;
+	public void writeTo(List<Info> liste, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType,
+			MultivaluedMap<String, Object> httpHeaders, OutputStream outputStream) throws IOException, WebApplicationException {
 			for (Info i : liste) {
 				String zeile = String.format("%d;%s;%s\n", i.getNr(),
 						i.getDatum().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), i.getText());
 				outputStream.write(zeile.getBytes());
 
 			}
-		}
 
 	}
+
 
 }
