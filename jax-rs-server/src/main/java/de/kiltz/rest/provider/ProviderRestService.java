@@ -9,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import de.kiltz.rest.filter.Logged;
+
 @Path("/providers")
 public class ProviderRestService {
 
@@ -18,6 +20,7 @@ public class ProviderRestService {
 	 */
 	@GET
     @Produces({MediaType.APPLICATION_JSON, "application/tz-csv"})
+	@Logged
 	public List<Info> getInfos() {
 		List<Info> liste = new ArrayList<>();
 		liste.add(new Info(1, LocalDate.now().minusDays(1), "Gestern"));
