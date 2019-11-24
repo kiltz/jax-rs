@@ -1,0 +1,22 @@
+{
+	"request": "org.jboss.resteasy.plugins.server.servlet.Servlet3AsyncHttpRequest@740b8da3",
+	"httpResponse": "org.jboss.resteasy.plugins.server.servlet.HttpServlet30Dispatcher$1@368291f4",
+	"jaxrsResponse": "org.jboss.resteasy.specimpl.BuiltResponse@d477a4c",
+	"requestContext": "org.jboss.resteasy.core.interception.ResponseContainerRequestContext@2f425840",
+	"responseFilters": [
+		"org.jboss.resteasy.security.doseta.DigitalSigningInterceptor@12745a6b",
+		"de.kiltz.rest.filter.LoggingFilter@2457c773",
+		"org.jboss.resteasy.plugins.interceptors.encoding.MessageSanitizerContainerResponseFilter@196a1be1"
+	],
+	"continuation": "org.jboss.resteasy.core.ServerResponseWriter$$Lambda$783/807886704@2777b4",
+	"currentFilter": 2,
+	"suspended": false,
+	"filterReturnIsMeaningful": true,
+	"contextDataMap": {
+		
+	},
+	"inFilter": true,
+	"throwable": null,
+	"onComplete": "org.jboss.resteasy.core.SynchronousDispatcher$$Lambda$782/129102854@30b0d2d9",
+	"weSuspended": false
+}
