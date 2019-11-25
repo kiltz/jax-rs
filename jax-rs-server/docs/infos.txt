@@ -1,0 +1,2 @@
+
+192.168.65.171:8080/download/wildfly-18.0.0.Final.zip
