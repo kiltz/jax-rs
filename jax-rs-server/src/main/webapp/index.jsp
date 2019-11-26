@@ -6,6 +6,9 @@
   <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     	<title>JAX-RS</title>
+        <link rel="stylesheet" type="text/css" href="css/formate.css" />
+    	<script type="text/javascript"	src="js/jquery.js"></script>
+    	<script type="text/javascript"	src="js/toolz.js"></script>
   </head>
   <body>
     <h1>Startseite von JAX-RS</h1>
@@ -29,5 +32,32 @@
     </form>
 
     <a href="api/application.xml">Übersicht der Services</a>
+      
+          <h2>Ajax</h2>
+    
+    <ul>
+    	<li><a class="ajaxLink"
+				href="api/ajax/meldungen">Eine Meldung</a></li>
+    
+    </ul>
+    	<div id="layoutInhalt">...</div>
+	<script type="text/javascript">
+		$("a.ajaxLink").click(function() {
+			var link = $(this);
+			$.ajax({
+				url : link.attr("href"),
+				dataType : "text",
+				success : function(text) {
+					MvcUtil.zeigInhalt("dunkelblau", text);
+				},
+				error : function(xhr) {
+					MvcUtil.zeigInhalt("rot", xhr.responseText);
+				}
+			});
+			return false;
+		});
+	</script>
+    
+
   </body>
 </html> 
