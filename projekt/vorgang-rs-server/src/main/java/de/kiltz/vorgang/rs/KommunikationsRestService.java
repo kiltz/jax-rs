@@ -14,8 +14,8 @@ public class KommunikationsRestService {
 
 
     /**
-     * Testmethode für Überprüfung der Kommunikation curl -i http://127.0.0.1:8080/vorgang/api/info?key=user.name -H
-     * "ACCEPT:text/plain"
+     * Testmethode für Überprüfung der Kommunikation 
+     * curl -i http://127.0.0.1:8080/api/info?key=user.name -H "ACCEPT:text/plain"
      *
      * @param key
      * @return
