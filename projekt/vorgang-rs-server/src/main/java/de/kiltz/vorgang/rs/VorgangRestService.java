@@ -1,6 +1,8 @@
 package de.kiltz.vorgang.rs;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.DELETE;
@@ -26,6 +28,13 @@ public class VorgangRestService {
 
 	public VorgangRestService() {
 		service = new VorgangsServiceImpl();
+	}
+	
+	public Page<VorgangInfo> getVorgaenge(int page, int size, String name) {
+		List<VorgangInfo> liste = new ArrayList<>();
+		// Todo: Liste füllen
+		int totalElements = 200;
+		return new Page(liste, page, size, totalElements );
 	}
 
 	@GET
