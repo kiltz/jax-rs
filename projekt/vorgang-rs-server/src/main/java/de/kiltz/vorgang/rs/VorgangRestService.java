@@ -34,7 +34,7 @@ public class VorgangRestService {
 		List<VorgangInfo> liste = new ArrayList<>();
 		// Todo: Liste füllen
 		int totalElements = 200;
-		return new Page(liste, page, size, totalElements );
+		return new Page<VorgangInfo>(liste, page, size, totalElements );
 	}
 
 	@GET
