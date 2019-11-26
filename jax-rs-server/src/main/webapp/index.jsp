@@ -30,9 +30,9 @@
     X: <input type="text" name="x" size="5"/> Y: <input type="text" name="y" size="5"/>
     <input type="submit" value=" = "/> 
     </form>
-
+<!-- 
     <a href="api/application.wadl">Übersicht der Services</a>
-      
+      --> 
           <h2>Ajax</h2>
     
     <ul>
